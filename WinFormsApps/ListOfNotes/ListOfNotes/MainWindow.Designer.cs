@@ -73,7 +73,7 @@
             label_name.ForeColor = SystemColors.Window;
             label_name.Location = new Point(12, 10);
             label_name.Name = "label_name";
-            label_name.Size = new Size(120, 39);
+            label_name.Size = new Size(147, 39);
             label_name.TabIndex = 2;
             label_name.Text = "Заметки";
             // 

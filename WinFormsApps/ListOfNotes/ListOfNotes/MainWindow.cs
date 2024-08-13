@@ -1,4 +1,5 @@
 using System.Drawing.Drawing2D;
+using System.Globalization;
 using Models;
 
 namespace ListOfNotes
@@ -29,16 +30,13 @@ namespace ListOfNotes
 
         private void LoadNotes()
         {
-            // Получаем все заметки из базы данных
             var notes = database.GetAllNotes();
-            listBoxNotes.Items.Clear(); // Очищаем текущий список заметок
+            listBoxNotes.Items.Clear();
 
             string selectedCategory = comboBoxCategories.SelectedItem?.ToString() ?? "Все";
 
             foreach (var note in notes)
             {
-                // Добавляем заголовки заметок в список
-                //listBoxNotes.Items.Add(note.Title);
                 if (selectedCategory == "Все" || note.Category == selectedCategory)
                 {
                     listBoxNotes.Items.Add(note.Title);
@@ -70,34 +68,6 @@ namespace ListOfNotes
                 richTextBoxNote.Clear();
             }
         }
-
-        /*
-        private void listBoxNotes_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-            {
-                // Проверяем, что выбранный элемент в списке
-                if (listBoxNotes.SelectedItem != null)
-                {
-                    // Получаем индекс выбранной заметки
-                    int selectedIndex = listBoxNotes.SelectedIndex;
-                    // Получаем заметку из базы по индексу
-                    var note = database.GetNoteById(selectedIndex + 1); // Предполагаем, что ID заметки начинается с 1
-
-                    if (note != null)
-                    {
-                        EditNoteForm editNoteForm = new EditNoteForm(database, note.Id); // Использование note.Id
-                        editNoteForm.ShowDialog();
-                        editNoteForm.Dispose();
-                        LoadNotes();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Заметка не найдена.");
-                    }
-                }
-            }
-        }*/
 
         private void listBoxNotes_MouseDoubleClick(object sender, MouseEventArgs e)
         {

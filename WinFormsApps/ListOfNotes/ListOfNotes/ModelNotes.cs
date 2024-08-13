@@ -26,6 +26,20 @@ namespace Models
     {
         private List<Data> notes;
 
+        private readonly string[] _dateFormats =
+        {
+            "yyyy-MM-ddTHH:mm:ss",  // ISO 8601 format
+            "yyyy-MM-dd HH:mm:ss",  // Standard format
+            "MM/dd/yyyy HH:mm:ss",  // US format
+            "dd.MM.yyyy HH:mm:ss",  // European format
+            "dd.MM.yyyy H:mm:ss",   // European format without leading zero in hours
+            "M/dd/yyyy h:mm:ss tt", // US 12-hour format with AM/PM
+            "MM/dd/yyyy h:mm:ss tt", // US 12-hour format with AM/PM and leading zero for month
+            "d/M/yyyy h:mm:ss tt",  // UK 12-hour format with AM/PM
+            "d/M/yyyy H:mm:ss",     // UK 24-hour format
+            "dd/MM/yyyy H:mm:ss"    // UK 24-hour format with leading zero
+        };
+
         public ModelNotes()
         {
             notes = new List<Data>();
@@ -34,8 +48,17 @@ namespace Models
 
         private string GetDatabasePath()
         {
-            // Путь к базе данных относительно каталога выполнения приложения
-            return Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "DataBase", "database.json");
+            // Используем AppData для хранения базы данных
+            string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DataBase");
+            string databasePath = Path.Combine(appDataPath, "database.json");
+
+            // Создание папки, если её нет
+            if (!Directory.Exists(appDataPath))
+            {
+                Directory.CreateDirectory(appDataPath);
+            }
+
+            return databasePath;
         }
 
         private int GenerateUniqueId()
@@ -50,15 +73,8 @@ namespace Models
         {
             try
             {
-                string appDataPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DataBase");
-                string databasePath = Path.Combine(appDataPath, "database.json");
+                string databasePath = GetDatabasePath();
                 string json = JsonSerializer.Serialize(notes);
-
-                // Создание папки, если её нет
-                if (!Directory.Exists(appDataPath))
-                {
-                    Directory.CreateDirectory(appDataPath);
-                }
 
                 // Сохранение данных в файл
                 File.WriteAllText(databasePath, json);
@@ -75,7 +91,7 @@ namespace Models
             var dataOfNote = new Data
             {
                 Id = GenerateUniqueId(),
-                Date = DateTime.Parse(date, new CultureInfo("ru-RU")),
+                Date = ParseDate(date),
                 Title = title,
                 Text = text,
                 Category = category
@@ -110,6 +126,7 @@ namespace Models
                 {
                     string json = File.ReadAllText(path);
                     notes = JsonSerializer.Deserialize<List<Data>>(json) ?? new List<Data>();
+                    Console.WriteLine($"Загружено {notes.Count} заметок.");
                     return notes;
                 }
                 else
@@ -134,7 +151,7 @@ namespace Models
             {
                 noteToUpdate.Title = title;
                 noteToUpdate.Text = text;
-                noteToUpdate.Date = DateTime.Parse(date, new CultureInfo("ru-RU"));
+                noteToUpdate.Date = ParseDate(date);
                 noteToUpdate.Category = category;
                 SaveDataToJson();
             }
@@ -148,6 +165,21 @@ namespace Models
         public List<Data> GetAllNotes()
         {
             return notes;
+        }
+
+        private DateTimeOffset ParseDate(string? dateString)
+        {
+            if (string.IsNullOrWhiteSpace(dateString))
+                throw new ArgumentException("Date string cannot be null or empty.", nameof(dateString));
+
+            if (DateTimeOffset.TryParseExact(dateString, _dateFormats, CultureInfo.InvariantCulture, DateTimeStyles.None, out var date))
+            {
+                return date;
+            }
+            else
+            {
+                throw new FormatException($"Date string '{dateString}' is not in the expected formats.");
+            }
         }
     }
 }
