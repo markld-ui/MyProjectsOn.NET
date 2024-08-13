@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListOfNotes", "ListOfNotes\ListOfNotes.csproj", "{C928E96E-B42B-4AB7-A7DA-A42D636D63BC}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ListOfNotesSetup", "ListOfNotesSetup\ListOfNotesSetup.vdproj", "{36CD5D37-BCE5-4323-87D3-52148C1E96E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C928E96E-B42B-4AB7-A7DA-A42D636D63BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C928E96E-B42B-4AB7-A7DA-A42D636D63BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C928E96E-B42B-4AB7-A7DA-A42D636D63BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C928E96E-B42B-4AB7-A7DA-A42D636D63BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36CD5D37-BCE5-4323-87D3-52148C1E96E7}.Debug|Any CPU.ActiveCfg = Debug
+		{36CD5D37-BCE5-4323-87D3-52148C1E96E7}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B4EBE54-55D2-4FE2-B936-EEB4C1439B0D}
+	EndGlobalSection
+EndGlobal
