@@ -97,7 +97,7 @@ namespace Models
                 Category = category
             };
 
-            notes.Add(dataOfNote);
+            notes.Insert(0, dataOfNote);
             SaveDataToJson();
         }
 
@@ -149,10 +149,19 @@ namespace Models
             var noteToUpdate = notes.FirstOrDefault(n => n.Id == id);
             if (noteToUpdate != null)
             {
+                // Удаляем старую версию заметки
+                notes.Remove(noteToUpdate);
+
+                // Обновляем данные заметки
                 noteToUpdate.Title = title;
                 noteToUpdate.Text = text;
                 noteToUpdate.Date = ParseDate(date);
                 noteToUpdate.Category = category;
+
+                // Добавляем обновленную заметку в начало списка
+                notes.Insert(0, noteToUpdate);
+
+                // Сохраняем изменения в файл
                 SaveDataToJson();
             }
         }
