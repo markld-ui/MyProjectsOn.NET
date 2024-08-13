@@ -82,6 +82,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -189,7 +197,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:ListOfNotesSetup"
+        "ProductName" = "8:ListOfNotes"
         "ProductCode" = "8:{4D1B1DDC-5D55-45F5-ABA8-B4F90FB01F2C}"
         "PackageCode" = "8:{B0A9D5E8-FF9B-4788-9D27-DBB6E3509B28}"
         "UpgradeCode" = "8:{AA5E77A6-0840-4380-A56B-5D02A5098779}"
@@ -202,7 +210,7 @@
         "Manufacturer" = "8:markld_UI"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:ListOfNotesSetup"
+        "Title" = "8:ListOfNotes"
         "Subject" = "8:"
         "ARPCONTACT" = "8:markl_UI"
         "Keywords" = "8:"
