@@ -55,6 +55,16 @@ You can download the latest version of the installer from the [releases page](ht
 1. Double-click on a note to open the edit form.
 2. Modify the data and click "Save".
 
+## Screenshots
+
+**Main application window:**
+
+![Main Window](./mainPage.png)
+
+**Note editing window:**
+
+![Edit Note Window](./editPage.png)
+
 ## Dependencies
 
 - .NET Framework (version depends on the target project)
