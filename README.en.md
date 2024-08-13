@@ -1,15 +1,19 @@
 # My Projects
 
-Welcome to the [My Projects](https://github.com/markld-ui/TrainingCsahrp) repository!
+Welcome to the [My Projects](https://github.com/markld-ui/MyProjectsOn.NET) repository!
 
 This description is available in several languages. Please choose your preferred language for documentation:
 
 - [English](README.en.md)
 - [Русский](README.ru.md)
 
+## Download the Installer
+
+You can download the latest version of the installer from the [releases page](https://github.com/markld-ui/MyProjectsOn.NET/releases).
+
 ## Project Description
 
-**TrainingCsahrp** is a note management application for the WinForms platform. The project allows users to create, edit, delete, and view notes using a graphical interface.
+**ListOfNotes** is a note management application for the WinForms platform. The project allows users to create, edit, delete, and view notes using a graphical interface.
 
 ## Features
 
@@ -23,7 +27,7 @@ This description is available in several languages. Please choose your preferred
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/markld-ui/TrainingCsahrp.git
+    git clone https://github.com/markld-ui/MyProjectsOn.NET.git
     ```
 
 2. Open the project in Visual Studio.

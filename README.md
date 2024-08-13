@@ -1,6 +1,6 @@
 # My Projects
 
-Добро пожаловать в репозиторий [My Projects](https://github.com/markld-ui/TrainingCsahrp)!
+Добро пожаловать в репозиторий [My Projects](https://github.com/markld-ui/MyProjectsOn.NET)!
 
 Это описание доступно на нескольких языках. Пожалуйста, выберите ваш язык:
 
@@ -9,11 +9,11 @@
 
 ## Скачать установочный файл
 
-Вы можете скачать последнюю версию установочного файла с [страницы релизов](https://github.com/markld-ui/TrainingCsahrp/releases).
+Вы можете скачать последнюю версию установочного файла с [страницы релизов](https://github.com/markld-ui/MyProjectsOn.NET/releases).
 
 ## Описание проекта
 
-**TrainingCsahrp** - это приложение для управления заметками на платформе WinForms. Проект позволяет пользователям создавать, редактировать, удалять и просматривать заметки, используя графический интерфейс.
+**ListOfNotes** - это приложение для управления заметками на платформе WinForms. Проект позволяет пользователям создавать, редактировать, удалять и просматривать заметки, используя графический интерфейс.
 
 ## Функциональность
 
@@ -27,7 +27,7 @@
 1. Клонируйте репозиторий:
 
     ```bash
-    git clone https://github.com/markld-ui/TrainingCsahrp.git
+    git clone https://github.com/markld-ui/MyProjectsOn.NET.git
     ```
 
 2. Откройте проект в Visual Studio.
