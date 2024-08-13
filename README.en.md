@@ -2,7 +2,7 @@
 
 Welcome to the [My Projects](https://github.com/markld-ui/TrainingCsahrp) repository!
 
-This project is available in several languages. Please choose your preferred language for documentation:
+This description is available in several languages. Please choose your preferred language for documentation:
 
 - [English](README.en.md)
 - [Русский](README.ru.md)
