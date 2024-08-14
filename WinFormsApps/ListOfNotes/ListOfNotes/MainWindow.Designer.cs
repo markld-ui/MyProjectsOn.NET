@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBoxSearch = new TextBox();
-            buttonFind = new Button();
             label_name = new Label();
             listBoxNotes = new ListBox();
             comboBoxCategories = new ComboBox();
@@ -40,32 +38,6 @@
             comboBox1 = new ComboBox();
             label1 = new Label();
             SuspendLayout();
-            // 
-            // textBoxSearch
-            // 
-            textBoxSearch.BackColor = Color.FromArgb(82, 83, 85);
-            textBoxSearch.Font = new Font("Segoe UI", 18F);
-            textBoxSearch.ForeColor = SystemColors.Window;
-            textBoxSearch.Location = new Point(412, 10);
-            textBoxSearch.Name = "textBoxSearch";
-            textBoxSearch.Size = new Size(519, 39);
-            textBoxSearch.TabIndex = 0;
-            textBoxSearch.Text = "Поиск...";
-            textBoxSearch.TextChanged += textBoxSearch_TextChanged;
-            textBoxSearch.MouseDown += textBoxSearch_MouseDown;
-            // 
-            // buttonFind
-            // 
-            buttonFind.BackColor = Color.FromArgb(82, 83, 85);
-            buttonFind.Font = new Font("Segoe UI", 16F);
-            buttonFind.ForeColor = SystemColors.Window;
-            buttonFind.Location = new Point(937, 10);
-            buttonFind.Name = "buttonFind";
-            buttonFind.Size = new Size(133, 39);
-            buttonFind.TabIndex = 1;
-            buttonFind.Text = "Найти";
-            buttonFind.UseVisualStyleBackColor = false;
-            buttonFind.Click += buttonFind_Click;
             // 
             // label_name
             // 
@@ -89,7 +61,6 @@
             listBoxNotes.ScrollAlwaysVisible = true;
             listBoxNotes.Size = new Size(312, 570);
             listBoxNotes.TabIndex = 3;
-            listBoxNotes.SelectedIndexChanged += listBoxNotes_SelectedIndexChanged;
             listBoxNotes.MouseDoubleClick += listBoxNotes_MouseDoubleClick;
             // 
             // comboBoxCategories
@@ -126,7 +97,6 @@
             textBoxTitleNote.Size = new Size(574, 32);
             textBoxTitleNote.TabIndex = 6;
             textBoxTitleNote.Text = "Заголовок";
-            textBoxTitleNote.TextChanged += textBoxTitle_TextChanged;
             textBoxTitleNote.MouseDown += textBoxTitleNote_MouseDown;
             // 
             // richTextBoxNote
@@ -138,7 +108,6 @@
             richTextBoxNote.Size = new Size(574, 266);
             richTextBoxNote.TabIndex = 8;
             richTextBoxNote.Text = "Введите текст заметки";
-            richTextBoxNote.TextChanged += richTextBoxNote_TextChanged;
             richTextBoxNote.MouseDown += richTextBoxNote_MouseDown;
             // 
             // buttonSaveNote
@@ -161,7 +130,6 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(312, 33);
             comboBox1.TabIndex = 10;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -189,8 +157,6 @@
             Controls.Add(comboBoxCategories);
             Controls.Add(listBoxNotes);
             Controls.Add(label_name);
-            Controls.Add(buttonFind);
-            Controls.Add(textBoxSearch);
             MaximizeBox = false;
             MaximumSize = new Size(1200, 800);
             MinimumSize = new Size(1200, 800);
@@ -202,9 +168,6 @@
         }
 
         #endregion
-
-        private TextBox textBoxSearch;
-        private Button buttonFind;
         private Label label_name;
         private ListBox listBoxNotes;
         private ComboBox comboBoxCategories;

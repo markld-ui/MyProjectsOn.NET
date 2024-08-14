@@ -46,14 +46,6 @@ namespace ListOfNotes
 
         //Mouse Events
 
-        private void textBoxSearch_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left && textBoxSearch.Text == "Поиск...")
-            {
-                textBoxSearch.Clear();
-            }
-        }
-
         private void textBoxTitleNote_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left && textBoxTitleNote.Text == "Заголовок")
@@ -97,19 +89,7 @@ namespace ListOfNotes
             }
         }
 
-            //--------------------
-
-            //Search
-        private void textBoxSearch_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //Кнопка найти
-        private void buttonFind_Click(object sender, EventArgs e)
-        {
-
-        }
+        //--------------------
 
         //Комбобокс категории
         private void comboBoxCategories_SelectedIndexChanged(object sender, EventArgs e)
@@ -117,23 +97,6 @@ namespace ListOfNotes
             LoadNotes();
         }
 
-        // Заголовок
-        private void textBoxTitle_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //Текст ноты
-        private void richTextBoxNote_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        //Список заметок
-        private void listBoxNotes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         //Кнопка сохранения
         private void buttonSaveNote_Click(object sender, EventArgs e)
@@ -159,10 +122,6 @@ namespace ListOfNotes
             {
                 MessageBox.Show("Заголовок или текст заметки пуст(-ы) или являются стандартным значением.");
             }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
         }
     }
 }
